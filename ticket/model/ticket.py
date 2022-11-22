@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, Boolean
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, Boolean, ForeignKey
 from config import Base
 
 
@@ -10,6 +9,7 @@ class Ticket(Base):
 
     id = Column(Integer, primary_key=True)
     redeemed = Column(Boolean, nullable=False)
+    event_id = Column(Integer, ForeignKey("events.id"))
 
     def __repr__(self):
         return f"Ticket [name={self.name}]"
