@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from config import Base
 
 
-class Event(Base):
+class Events(Base):
     """ Events Entity """
 
     __tablename__ = "events"

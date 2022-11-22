@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, Boolean, ForeignKey
 from config import Base
 
 
-class Ticket(Base):
+class Tickets(Base):
     """ Tickets Entity """
 
     __tablename__ = "tickets"
@@ -12,4 +12,4 @@ class Ticket(Base):
     event_id = Column(Integer, ForeignKey("events.id"))
 
     def __repr__(self):
-        return f"Ticket [name={self.name}]"
+        return f"Ticket [name={self.name}, event_id={self.event_id}]"
