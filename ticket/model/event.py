@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, Integer, Date
 from sqlalchemy.orm import relationship
-from config import Base
+from ticket.config import Base
 
 
 class Events(Base):
@@ -10,7 +10,7 @@ class Events(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False, unique=True)
-    date = Date(String, nullable=False)
+    date = Column(Date, nullable=False)
     id_ticket = relationship("Tickets")
 
     def __repr__(self):

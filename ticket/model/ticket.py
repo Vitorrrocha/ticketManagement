@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, Boolean, ForeignKey
-from config import Base
+from ticket.config import Base
 
 
 class Tickets(Base):
