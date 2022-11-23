@@ -17,6 +17,7 @@ This project was developed with the following technologies:
   - SQLAlchemy
   - SQLite
   - Coverage
+  - Docker 🐋
 
 ### Available Scripts 💻
  <p>
