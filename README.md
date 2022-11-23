@@ -85,15 +85,3 @@ This project was developed with the following technologies:
     200 OK: If the ticket is OK.
     
     410 GONE: If the ticket has been redeemed.
-
-
-
-from ticket.config import *
-from ticket.model import *
-db_conn = DBConnectionHandler()
-engine = db_conn.get_engine()
-Base.metadata.create_all(engine)
-
-
-
-

@@ -2,6 +2,8 @@ from ticket.repo.ticket import TicketRepository
 
 
 class GetTicket:
+    """ " Use case class GetTicket"""
+
     @classmethod
     def get_ticket(cls, id_: int):
         """get ticket entity
@@ -14,9 +16,7 @@ class GetTicket:
 
         ticket = TicketRepository.get_ticket_by_id(id_)
         if not ticket:
-            raise Exception(
-                "The ticket identifier number: {} was not found!".format(id_)
-            )
+            raise Exception(f"The ticket identifier number: {id_} was not found!")
         if ticket.redeemed:
             return {"status": 410, "message": "GONE"}
 

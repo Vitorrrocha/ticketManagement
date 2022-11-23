@@ -5,6 +5,8 @@ from ticket.use_case.get_ticket import GetTicket
 
 
 def test_get_ticket_with_ticket_not_redeemed_return_200():
+    """Should get ticket by id if not redeemed return 200"""
+
     with patch(
         "ticket.repo.ticket.TicketRepository.get_ticket_by_id"
     ) as get_ticket_by_id, patch(
@@ -22,6 +24,8 @@ def test_get_ticket_with_ticket_not_redeemed_return_200():
 
 
 def test_get_ticket_with_ticket_redeemed_return_400():
+    """Should get ticket by id if redeemed return 400"""
+
     with patch(
         "ticket.repo.ticket.TicketRepository.get_ticket_by_id"
     ) as get_ticket_by_id, patch(
@@ -39,6 +43,8 @@ def test_get_ticket_with_ticket_redeemed_return_400():
 
 
 def test_get_ticket_with_ticket_not_found_raise_exception():
+    """Should get ticket by id if not in the database raise exception"""
+
     with patch(
         "ticket.repo.ticket.TicketRepository.get_ticket_by_id"
     ) as get_ticket_by_id:

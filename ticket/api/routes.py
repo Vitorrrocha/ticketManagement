@@ -2,6 +2,8 @@ from ticket.use_case.get_ticket import GetTicket
 
 
 def routes(app):
+    """Routes"""
+
     @app.route("/")
     def index():
         return "Index Page"
