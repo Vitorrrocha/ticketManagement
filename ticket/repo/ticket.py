@@ -1,24 +1,24 @@
 # pylint: disable=E1101
+from sqlalchemy import text
 
 from ticket.config import DBConnectionHandler
 from ticket.model.ticket import Tickets
-from sqlalchemy import text
 
 
 class TicketRepository:
     """Class to manage ticket Repository"""
 
     @classmethod
-    def get_ticket_by_id(cls, id: int):
+    def get_ticket_by_id(cls, id_: int):
         """get ticket entity
         : param
-            - id: ticket id
+            - id_: ticket id
         : return
             - the data value from database
         """
 
         with DBConnectionHandler() as db_connection:
-            ticket = db_connection.session.query(Tickets).get(id)
+            ticket = db_connection.session.query(Tickets).get(id_)
             db_connection.session.close()
             return ticket
 

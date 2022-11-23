@@ -6,10 +6,10 @@ def routes(app):
     def index():
         return "Index Page"
 
-    @app.route("/reedem/<int:ticketIdentifier>", methods=["GET"])
-    def get_ticket(ticketIdentifier):
-        response = GetTicket.get_ticket(ticketIdentifier)
-        return "{} {}".format(response["status"], response["message"])
+    @app.route("/reedem/<int:ticket_identifier>", methods=["GET"])
+    def get_ticket(ticket_identifier):
+        response = GetTicket.get_ticket(ticket_identifier)
+        return f"{response['status']} {response['message']}"
 
     @app.errorhandler(404)
     def error404(error):
