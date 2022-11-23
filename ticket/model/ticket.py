@@ -3,7 +3,7 @@ from ticket.config import Base
 
 
 class Tickets(Base):
-    """ Tickets Entity """
+    """Tickets Entity"""
 
     __tablename__ = "tickets"
 

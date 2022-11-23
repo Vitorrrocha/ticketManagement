@@ -6,14 +6,14 @@ from sqlalchemy import text
 
 
 class TicketRepository:
-    """ Class to manage ticket Repository """
+    """Class to manage ticket Repository"""
 
     @classmethod
     def get_ticket_by_id(cls, id: int):
-        """ get ticket entity
-        : param 
+        """get ticket entity
+        : param
             - id: ticket id
-        : return 
+        : return
             - the data value from database
         """
 
@@ -22,9 +22,9 @@ class TicketRepository:
             db_connection.session.close()
             return ticket
 
-    @classmethod   
+    @classmethod
     def update_ticket_by_id(cls, ticket_id: int):
-        """ update data in ticket entity
+        """update data in ticket entity
         : param - ticket_id: ticket id
         : return - None
         """
@@ -32,14 +32,15 @@ class TicketRepository:
         with DBConnectionHandler() as db_connection:
             try:
                 query = text(
-                    '''UPDATE Tickets
+                    """UPDATE Tickets
                     SET redeemed = True
-                    WHERE Tickets.id = %s;''' % ticket_id
-                    )
+                    WHERE Tickets.id = %s;"""
+                    % ticket_id
+                )
                 db_connection.session.execute(query)
                 db_connection.session.commit()
             except:
                 db_connection.session.rollback()
                 raise
             finally:
-               db_connection.session.close()
+                db_connection.session.close()

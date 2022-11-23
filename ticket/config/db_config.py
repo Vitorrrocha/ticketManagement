@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 class DBConnectionHandler:
-    """ Sqlalchemy database connection """
+    """Sqlalchemy database connection"""
 
     def __init__(self):
         self.__connection_string = "sqlite:///storage.db"
