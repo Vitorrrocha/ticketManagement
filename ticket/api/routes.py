@@ -1,4 +1,4 @@
-from ticket.repo import TicketRepository
+from ticket.use_case.get_ticket import GetTicket
 
 def routes(app):
         @app.route('/')
@@ -7,8 +7,9 @@ def routes(app):
 
         @app.route('/reedem/<int:ticketIdentifier>', methods=['GET'])
         def get_ticket(ticketIdentifier):
-            response = TicketRepository.get_ticket_by_id(ticketIdentifier)
-            return '{} {}'.format(response.status, response.message)
+            response = GetTicket.get_ticket(ticketIdentifier)
+            print(response)
+            return '{} {}'.format(response['status'], response['message'])
 
         @app.errorhandler(404)
         def error404(error):

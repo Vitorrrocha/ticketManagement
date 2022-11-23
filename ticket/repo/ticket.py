@@ -14,16 +14,9 @@ class TicketRepository:
         : param 
             - id: ticket id
         : return 
-            - boolean value
+            - the data value from database
         """
 
         with DBConnectionHandler() as db_connection:
             ticket = db_connection.session.query(Tickets).get(id)
-            if not ticket:
-                raise Exception("The ticket identifier was not found!".format(id))
-            if ticket.redeemed:
-
-                return {'status': 410, 'message': 'GONE'}
-
-            return {'status': 200, 'message': 'OK'}
-
+            return ticket
