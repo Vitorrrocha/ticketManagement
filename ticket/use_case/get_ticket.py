@@ -17,5 +17,6 @@ class GetTicket:
             raise Exception("The ticket identifier was not found!".format(id))
         if ticket.redeemed:
             return {'status': 410, 'message': 'GONE'}
-
+            
+        TicketRepository.update_ticket_by_id(id)
         return {'status': 200, 'message': 'OK'}
