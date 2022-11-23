@@ -8,7 +8,6 @@ def routes(app):
         @app.route('/reedem/<int:ticketIdentifier>', methods=['GET'])
         def get_ticket(ticketIdentifier):
             response = GetTicket.get_ticket(ticketIdentifier)
-            print(response)
             return '{} {}'.format(response['status'], response['message'])
 
         @app.errorhandler(404)
