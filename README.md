@@ -2,7 +2,7 @@
 
 <h1 align="center"><b>Ticket Management Api 🎫</b></h1>
 
-### For successfully completing this task create a rudimentary event ticket managementsolution. The overall goal is to be able to create events and manage the number of peopleaccessing each event.
+### For successfully completing this task create a rudimentary event ticket managementsolution. The overall goal is to be able to create events and manage the number of people accessing each event.
 
 ## 🚀 Technologies
 
@@ -33,7 +33,9 @@ This project was developed with the following technologies:
   $ python3 -m venv venv
   $ source venv/bin/activate
   $ pip3 install -r requirements.txt
+  $ alembic upgrade head  # to add the migrations and the database
   ```
+  **!! Before start please populate the database !!**
 
   **Getting Started**
 
