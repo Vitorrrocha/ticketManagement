@@ -26,6 +26,10 @@ This project was developed with the following technologies:
 
   ```bash
   $ git clone https://github.com/Vitorrrocha/ticketManagement.git && cd ticketManagement
+
+  $ docker pull vitorrocha1228/ticket-management:ticket-management       # docker repository
+  
+  $ docker run -d -p 3000:3000 ticket-management:ticket-management
   ```
 
   **Installing dependencies**
