@@ -23,8 +23,8 @@ def test_get_ticket_with_ticket_not_redeemed_return_200():
         assert response == {"status": 200, "message": "OK"}
 
 
-def test_get_ticket_with_ticket_redeemed_return_400():
-    """Should get ticket by id if redeemed return 400"""
+def test_get_ticket_with_ticket_redeemed_return_410():
+    """Should get ticket by id if redeemed return 410"""
 
     with patch(
         "ticket.repo.ticket.TicketRepository.get_ticket_by_id"
